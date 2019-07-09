@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Simple is Better Than Complex{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      {% block head %}
+      <title> mysite</title>
+      {% endblock %}
+      <h1>My Site</h1>
+  </header>
+      {% if user.is_authenticated %}
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'view_profile' %}">Profile</a></li>
+                        <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+                        <li><a href="{% url 'change_password' %}">Change Password</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{% url 'logout' %}">Log out</a></li>
+
+      {% endif %}
+      <hr>
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+  </body>
+  </html>

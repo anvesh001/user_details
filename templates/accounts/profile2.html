@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>Change Password Profile</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Profile</h1>
+    <p>User Id:{{user.id}}</p>
+    <p>Username: {{ user }}</p>
+    <p>Email: {{ user.email }}</p>
+    {% if user.userprofile.image %}
+    <img src="{{ user.userprofile.image.url }}" width="240">
+    {% endif %}
+</div>
+
+{% endblock %}
